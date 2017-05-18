@@ -1,4 +1,4 @@
-//var nameList = document.getElementById("ingresoLista").value;
+
 
 //constructor lista
 function ListaNueva(id){
@@ -8,13 +8,9 @@ function ListaNueva(id){
 		var contenedor = document.getElementById("my-section");
 
 		var lista = document.createElement("div");
+		lista.setAttribute("class","listas");
 		lista.setAttribute("id","div" + this.id);
 		var nombreLista = document.createTextNode(nameList);
-
-		//LABEL de cada tarea
-		/*var labelInput = document.createElement("label");
-		var nombreLabel = document.createTextNode("Ingrese Tarea");
-		labelInput.appendChild(nombreLabel);*/
 
 		var saltoLinea = document.createElement("br"); //crea salto de linea entre el nombre de la lista y la tarea
 
@@ -32,13 +28,15 @@ function ListaNueva(id){
 		lista.appendChild(document.createElement("br"));
 		lista.appendChild(nombreLista);
 		lista.appendChild(saltoLinea);
-		//lista.appendChild(labelInput);
 		lista.appendChild(inputTarea);
+		lista.appendChild(document.createElement("br"));
 		lista.appendChild(botonTarea);
 		contenedor.appendChild(lista);
 	};
 }
 
+
+//esta funcion crea el input y el boton cuando se precione el enlace
 document.getElementById("newList").addEventListener("click",function(){
 	var touch = document.getElementById("my-section");
 	var inputLista = document.createElement("input");
@@ -55,41 +53,41 @@ document.getElementById("newList").addEventListener("click",function(){
 
 
 
-var i=0;
-var boton = document.getElementById("botoncito");
-boton.addEventListener("click",function(){
-	var agregoLista = new ListaNueva(i.toString());
-	i++;
-	agregoLista.agregar();
+	var i=0;
+	var boton = document.getElementById("botoncito");
+	boton.addEventListener("click",function(){
+		var agregoLista = new ListaNueva(i.toString());
+		i++;
+		agregoLista.agregar();
 
-	//constructor tareas
-	function TareaNueva(id_tarea,id_lista){
-		this.id_tarea = id_tarea;
-		this.id_lista = id_lista;
-		this.agregar = function(){
-			var nameWork = document.getElementById("input" + agregoLista.id).value;
-			var contenedorTarea = document.getElementById("div" + agregoLista.id);
+		//constructor tareas
+		function TareaNueva(id_tarea,id_lista){
+			this.id_tarea = id_tarea;
+			this.id_lista = id_lista;
+			this.agregar = function(){
+				var nameWork = document.getElementById("input" + agregoLista.id).value;
+				var contenedorTarea = document.getElementById("div" + agregoLista.id);
 
-			var imprimirTarea = document.createElement("div");
-			var textoTarea = document.createTextNode(nameWork);
-			imprimirTarea.appendChild(textoTarea);
-			contenedorTarea.appendChild(imprimirTarea);
+				var imprimirTarea = document.createElement("div");
+				imprimirTarea.setAttribute("class","tareas");
+				var textoTarea = document.createTextNode(nameWork);
+
+				imprimirTarea.appendChild(textoTarea);
+				contenedorTarea.appendChild(imprimirTarea);
+			}
 		}
-	}
 
-	var j=0;
-	var botonTarea = document.getElementById("boton" + agregoLista.id);
-	botonTarea.addEventListener("click",function(){
-		var agregoTarea = new TareaNueva(j.toString(),agregoLista.id);
-		j++;
-		agregoTarea.agregar();
+
+
+		var j=0;
+		var botonTarea = document.getElementById("boton" + agregoLista.id);
+		botonTarea.addEventListener("click",function(){
+			var agregoTarea = new TareaNueva(j.toString(),agregoLista.id);
+			j++;
+			agregoTarea.agregar();
+		});
 	});
+
 });
-
-})
 	
-
-
-
-
 

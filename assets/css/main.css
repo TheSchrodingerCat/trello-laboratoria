@@ -1,0 +1,111 @@
+body{
+	background-color: #F3CEFE;
+}
+
+#barra{
+	background-color: #AD49CA;
+	margin-top: -15px;
+	margin-bottom: 51px;
+	height: 110px;
+	width: 100%;
+	padding: 10px;
+	box-shadow: 0px 1px 24px -6px black;
+}
+
+a{
+	text-decoration: none;
+	font-family: 'Chau Philomene One', sans-serif;
+	font-size: 40px;
+}
+
+a:link{
+	color: purple;
+}
+
+#ingresoLista{
+	width: 25%;
+	border-radius: 5px;
+}
+
+button{
+	font-family: 'Chau Philomene One', sans-serif;
+	font-size: 15px;
+	background-color:whitesmoke;
+	width: 130px;
+	padding: 5px;	
+	border-radius: 6px;
+	box-shadow: 1px 2px 29px -10px #716276;
+}
+
+button:hover{
+	background-color: #C5B0CB; 
+	transition: background-color 0.3s;
+}
+
+.listas{
+	background-color: #BE3DDD;
+	width: 50%;
+	padding: 0 40px 40px 40px;
+	margin-top: 10px;
+	font-family: 'Kalam', cursive;
+	font-size: 40px;
+	border-top-left-radius: 25px;
+	border-bottom-right-radius: 25px;
+}
+
+
+textarea{
+	width: 90%;
+	height: 80px;
+	color: #4E4D53;
+	font-size: 12px;
+	padding: 10px;
+	border-radius: 10px;
+	border: 0px;
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+
+
+.tareas{
+	font-family: 'Alegreya', serif;
+	font-size: 20px;
+}
+
+
+img.block{
+	width: 165px;
+    padding: 23px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: block;
+}	
+
+
+/*#areaTareas{
+	width: 300px;
+    padding: 25px;
+    margin: 25px;
+    background-color: #118DE0;
+}
+
+#tareita{
+	background-color: #0079bf;
+	color: #FFF;
+	cursor: pointer;
+	padding: 10px 130px 10px 10px;
+	border-radius: 5px;
+}
+
+#tareita:hover{
+	background-color: #0C65A0;
+}
+
+
+
+#btn{
+	margin-left:-128px;
+}
+*/
