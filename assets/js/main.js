@@ -12,14 +12,14 @@ function ListaNueva(id){
 		var nombreLista = document.createTextNode(nameList);
 
 		//LABEL de cada tarea
-		var labelInput = document.createElement("label");
+		/*var labelInput = document.createElement("label");
 		var nombreLabel = document.createTextNode("Ingrese Tarea");
-		labelInput.appendChild(nombreLabel);
+		labelInput.appendChild(nombreLabel);*/
 
 		var saltoLinea = document.createElement("br"); //crea salto de linea entre el nombre de la lista y la tarea
 
 		//INPUT de cada tarea
-		var inputTarea = document.createElement("input");
+		var inputTarea = document.createElement("textarea");
 		inputTarea.setAttribute("id","input" + this.id);
 
 		//BOTON de cada tarea
@@ -29,14 +29,31 @@ function ListaNueva(id){
 		botonTarea.appendChild(contenidoBoton);
 
 		//LISTA debe anidar el nombre, salto de linea, label, input y boton de cada tarea
+		lista.appendChild(document.createElement("br"));
 		lista.appendChild(nombreLista);
 		lista.appendChild(saltoLinea);
-		lista.appendChild(labelInput);
+		//lista.appendChild(labelInput);
 		lista.appendChild(inputTarea);
 		lista.appendChild(botonTarea);
 		contenedor.appendChild(lista);
 	};
 }
+
+document.getElementById("newList").addEventListener("click",function(){
+	var touch = document.getElementById("my-section");
+	var inputLista = document.createElement("input");
+	inputLista.setAttribute("type","text");
+	inputLista.setAttribute("id","ingresoLista");
+	var elBoton = document.createElement("button");
+	elBoton.setAttribute("id","botoncito");
+	var contElBoton = document.createTextNode("Añadir");
+	elBoton.appendChild(contElBoton);
+
+	touch.appendChild(inputLista);
+	touch.appendChild(elBoton);
+
+
+
 
 var i=0;
 var boton = document.getElementById("botoncito");
@@ -69,7 +86,7 @@ boton.addEventListener("click",function(){
 	});
 });
 
-
+})
 	
 
 
