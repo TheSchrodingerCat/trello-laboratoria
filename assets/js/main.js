@@ -6,6 +6,7 @@ function ListaNueva(id){
 	this.agregar = function(){
 		var nameList = document.getElementById("ingresoLista").value;
 		var contenedor = document.getElementById("my-section");
+		var contenedor2 = document.getElementById("todasLasTareas");
 
 		var lista = document.createElement("div");
 		lista.setAttribute("class","listas");
@@ -31,13 +32,16 @@ function ListaNueva(id){
 		lista.appendChild(inputTarea);
 		lista.appendChild(document.createElement("br"));
 		lista.appendChild(botonTarea);
-		contenedor.appendChild(lista);
+		contenedor2.appendChild(lista);
+		contenedor.appendChild(contenedor2);
 	};
 }
 
 
 //esta funcion crea el input y el boton cuando se precione el enlace
-document.getElementById("newList").addEventListener("click",function(){
+
+
+function primera(){
 	var touch = document.getElementById("my-section");
 	var inputLista = document.createElement("input");
 	inputLista.setAttribute("type","text");
@@ -49,6 +53,7 @@ document.getElementById("newList").addEventListener("click",function(){
 
 	touch.appendChild(inputLista);
 	touch.appendChild(elBoton);
+	touch.appendChild(document.createElement("br"));
 
 
 
@@ -70,24 +75,34 @@ document.getElementById("newList").addEventListener("click",function(){
 
 				var imprimirTarea = document.createElement("div");
 				imprimirTarea.setAttribute("class","tareas");
+				var miUl = document.createElement("ul");
+				var miLi = document.createElement("li");
 				var textoTarea = document.createTextNode(nameWork);
 
-				imprimirTarea.appendChild(textoTarea);
+				miLi.appendChild(textoTarea);
+				miUl.appendChild(miLi);
+				imprimirTarea.appendChild(miUl);
+
 				contenedorTarea.appendChild(imprimirTarea);
 			}
 		}
 
 
 
-		var j=0;
-		var botonTarea = document.getElementById("boton" + agregoLista.id);
-		botonTarea.addEventListener("click",function(){
+		function segunda(){
 			var agregoTarea = new TareaNueva(j.toString(),agregoLista.id);
 			j++;
 			agregoTarea.agregar();
-		});
+		}
+
+
+		var j=0;
+		var botonTarea = document.getElementById("boton" + agregoLista.id);
+		botonTarea.addEventListener("click",segunda);
 	});
 
-});
+}
+
+document.getElementById("newList").addEventListener("click",primera);
 	
 

@@ -44,13 +44,15 @@ button:hover{
 
 .listas{
 	background-color: #BE3DDD;
-	width: 50%;
+	width: 30%;
 	padding: 0 40px 40px 40px;
-	margin-top: 10px;
+	margin: 10px;
 	font-family: 'Kalam', cursive;
-	font-size: 40px;
+	font-size: 35px;
+	line-height: 30px;
 	border-top-left-radius: 25px;
 	border-bottom-right-radius: 25px;
+	display: inline-block;
 }
 
 
@@ -70,6 +72,10 @@ textarea{
 .tareas{
 	font-family: 'Alegreya', serif;
 	font-size: 20px;
+}
+
+li{
+	line-height: 15px;
 }
 
 
