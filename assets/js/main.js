@@ -44,31 +44,33 @@ boton.addEventListener("click",function(){
 	var agregoLista = new ListaNueva(i.toString());
 	i++;
 	agregoLista.agregar();
-})
 
+	//constructor tareas
+	function TareaNueva(id_tarea,id_lista){
+		this.id_tarea = id_tarea;
+		this.id_lista = id_lista;
+		this.agregar = function(){
+			var nameWork = document.getElementById("input" + agregoLista.id).value;
+			var contenedorTarea = document.getElementById("div" + agregoLista.id);
 
-//constructor tareas
-function TareaNueva(id_tarea){
-	this.id_tarea = id_tarea;
-	this.agregar = function(){
-		var nameWork = document.getElementById("input" + agregoLista.id.toString()).value;
-		var contenedorTarea = document.getElementById("div" + agregoLista.id.toString());
-
-		var imprimirTarea = document.createElement("div");
-		var textoTarea = document.createTextNode("nameWork");
-		imprimirTarea.appendChild(textoTarea);
-		contenedorTarea.appendChild(imprimirTarea);
+			var imprimirTarea = document.createElement("div");
+			var textoTarea = document.createTextNode(nameWork);
+			imprimirTarea.appendChild(textoTarea);
+			contenedorTarea.appendChild(imprimirTarea);
+		}
 	}
-}
 
-var j=0;
-
-	var botonTarea = document.getElementById("boton" + j.toString());
+	var j=0;
+	var botonTarea = document.getElementById("boton" + agregoLista.id);
 	botonTarea.addEventListener("click",function(){
-		var agregoTarea = new TareaNueva(j.toString());
+		var agregoTarea = new TareaNueva(j.toString(),agregoLista.id);
 		j++;
 		agregoTarea.agregar();
-	})
+	});
+});
+
+
+	
 
 
 
