@@ -5,6 +5,7 @@ function ListaNueva(id){
 	this.id = id;
 	this.agregar = function(){
 		var nameList = document.getElementById("ingresoLista").value;
+		document.getElementById("ingresoLista").value = "";
 		var contenedor = document.getElementById("my-section");
 		var contenedor2 = document.getElementById("todasLasTareas");
 
@@ -34,6 +35,7 @@ function ListaNueva(id){
 		lista.appendChild(botonTarea);
 		contenedor2.appendChild(lista);
 		contenedor.appendChild(contenedor2);
+
 	};
 }
 
@@ -71,6 +73,7 @@ function primera(){
 			this.id_lista = id_lista;
 			this.agregar = function(){
 				var nameWork = document.getElementById("input" + agregoLista.id).value;
+				document.getElementById("input" + agregoLista.id).value = "";
 				var contenedorTarea = document.getElementById("div" + agregoLista.id);
 
 				var imprimirTarea = document.createElement("div");
