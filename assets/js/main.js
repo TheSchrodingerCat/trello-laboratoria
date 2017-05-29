@@ -16,6 +16,11 @@ function ListaNueva(id){
 
 		var saltoLinea = document.createElement("br"); //crea salto de linea entre el nombre de la lista y la tarea
 
+		//aca deberia ir el input donde se guardan las tareas
+
+		var guardaTareas = document.createElement("div");
+		guardaTareas.setAttribute("id","guarda-tareas" + this.id);
+
 		//INPUT de cada tarea
 		var inputTarea = document.createElement("textarea");
 		inputTarea.setAttribute("id","input" + this.id);
@@ -30,6 +35,7 @@ function ListaNueva(id){
 		lista.appendChild(document.createElement("br"));
 		lista.appendChild(nombreLista);
 		lista.appendChild(saltoLinea);
+		lista.appendChild(guardaTareas); //div extra agregada
 		lista.appendChild(inputTarea);
 		lista.appendChild(document.createElement("br"));
 		lista.appendChild(botonTarea);
@@ -40,7 +46,7 @@ function ListaNueva(id){
 }
 
 
-//esta funcion crea el input y el boton cuando se precione el enlace
+//esta funcion crea el input y el boton cuando se presione el enlace
 
 
 function primera(){
@@ -86,7 +92,10 @@ function primera(){
 				miUl.appendChild(miLi);
 				imprimirTarea.appendChild(miUl);
 
+				var guardaTareas = document.getElementById("guarda-tareas" + agregoLista.id);
+
 				contenedorTarea.appendChild(imprimirTarea);
+				guardaTareas.appendChild(imprimirTarea); //adopcion del contenedor inicial
 			}
 		}
 
