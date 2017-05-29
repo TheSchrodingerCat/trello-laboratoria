@@ -104,8 +104,9 @@ function primera(){
 		botonTarea.addEventListener("click",segunda);
 	});
 
+	document.getElementById("newList").removeEventListener("click",primera);
 }
 
 document.getElementById("newList").addEventListener("click",primera);
-	
+
 
